@@ -5,6 +5,7 @@ var _text: String
 
 func setup(text: String) -> SayStep:
 	_text = text 
+	return self
 
 
 func play():
