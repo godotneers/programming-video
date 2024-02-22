@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://1afhx43vpfy4"]
+
+[ext_resource type="TileSet" uid="uid://dkvmyh3ie358w" path="res://infrastructure/grid/grid_tileset.tres" id="1_8e008"]
+[ext_resource type="PackedScene" uid="uid://dtw1de5jfjxue" path="res://infrastructure/coordinate_indicators/coordinate_overlay.tscn" id="2_d4fpb"]
+[ext_resource type="PackedScene" uid="uid://buatvxdvveuad" path="res://infrastructure/mrg/mr_g.tscn" id="3_fehtc"]
+[ext_resource type="Script" path="res://challenges/04_beverage_counter/beverage_counter.gd" id="4_bj6oq"]
+[ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="5_w7x71"]
+[ext_resource type="PackedScene" uid="uid://bwmwivq8vfh4v" path="res://items/coffee.tscn" id="6_mww67"]
+[ext_resource type="PackedScene" uid="uid://c01mvvoya4jfg" path="res://items/tea.tscn" id="7_oa4i1"]
+
+[node name="BeverageCounter" type="Node2D"]
+
+[node name="World" type="TileMap" parent="." groups=["world"]]
+position = Vector2(-64, -64)
+tile_set = ExtResource("1_8e008")
+format = 2
+layer_0/tile_data = PackedInt32Array(1, 2, 0, 0, 2, 0, 65535, 2, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65533, 1, 0, 3, 2, 0, 4, 2, 0, -65532, 1, 0, -131068, 1, 0, -65531, 1, 0, 5, 2, 0, 6, 2, 0, -65530, 1, 0, -131067, 1, 0, -131069, 1, 0, -131071, 1, 0, -131072, 1, 0, -65538, 1, 0, -2, 1, 0, 65534, 2, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, -131066, 1, 0, 2, 2, 0, 65538, 1, 0, -65534, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, -65537, 1, 0, -131070, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Tile Coordinates" parent="." instance=ExtResource("2_d4fpb")]
+visible = false
+offset_left = -320.0
+offset_top = -320.0
+offset_right = 832.0
+offset_bottom = 320.0
+grid_size = Vector2i(9, 5)
+grid_offset = Vector2i(-2, -2)
+
+[node name="Mr G" parent="." instance=ExtResource("3_fehtc")]
+position = Vector2(-266, 6)
+script = ExtResource("4_bj6oq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("5_w7x71")]
+metadata/_edit_lock_ = true
+
+[node name="Coffee" parent="." instance=ExtResource("6_mww67")]
+position = Vector2(-134, 129)
+
+[node name="Tea" parent="." instance=ExtResource("7_oa4i1")]
+position = Vector2(-5, 108)
+
+[node name="Coffee2" parent="." instance=ExtResource("6_mww67")]
+position = Vector2(126, 130)
+
+[node name="Tea2" parent="." instance=ExtResource("7_oa4i1")]
+position = Vector2(251, 112)
+
+[node name="Tea3" parent="." instance=ExtResource("7_oa4i1")]
+position = Vector2(636, 110)
+
+[connection signal="finished" from="Mr G" to="CanvasLayer/Control" method="on_robot_finished"]
+[connection signal="step_started" from="Mr G" to="CanvasLayer/Control" method="on_step_started"]
