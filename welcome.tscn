@@ -27,11 +27,11 @@ grid_offset = Vector2i(1, 1)
 metadata/_edit_lock_ = true
 
 [node name="Mr G" parent="." instance=ExtResource("1_jo3sr")]
-position = Vector2(381, 256)
+position = Vector2(248, 258)
 script = ExtResource("3_6vxvv")
 
 [node name="Coffee" parent="." instance=ExtResource("5_6p0ys")]
-position = Vector2(636, 253)
+position = Vector2(776, 255)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
