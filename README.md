@@ -12,11 +12,11 @@ Hello, Godotneers! Thank you very much for watching this video. This repository 
 ## Using this project
 This project is intended for the use with Godot 4.2 or later. Make sure you have at least this version installed before you start. You can download Godot from the [official website](https://godotengine.org/download) or install it via Steam.
 
-<div align="center" style="font-size: 2em">
-[Download this project](https://github.com/godotneers/programming-video/archive/refs/heads/main.zip)
-</div>
+<p align="center" style="font-size: 2em">
+<a href="https://github.com/godotneers/programming-video/archive/refs/heads/next.zip">Download this Project</a>
+</p>
 
-
+Then follow the instructions in the video to open the project in Godot and to start learning to program with Godot.
 
 ## Support me
 
