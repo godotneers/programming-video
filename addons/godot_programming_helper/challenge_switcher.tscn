@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://3dtsqnysehsp"]
+
+[ext_resource type="Script" path="res://addons/godot_programming_helper/challenge_switcher.gd" id="1_4i5ds"]
+
+[node name="ChallengeSwitcher" type="MarginContainer"]
+theme_override_constants/margin_left = 10
+script = ExtResource("1_4i5ds")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Challenges"

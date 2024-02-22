@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://mm74oald6780"]
+
+[ext_resource type="Script" path="res://infrastructure/item/item.gd" id="1_jl2xw"]
+[ext_resource type="Texture2D" uid="uid://ch3hpeoccj8gf" path="res://infrastructure/item/coffee.png" id="2_3c35d"]
+
+[node name="Item" type="Node2D" groups=["item"]]
+script = ExtResource("1_jl2xw")
+item_name = "Item"
+texture = ExtResource("2_3c35d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_3c35d")

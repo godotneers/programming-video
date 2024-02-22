@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="programming_video"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="programming_video"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_programming_helper/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_1="Ground"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.113725, 0.462745, 0.266667, 1)

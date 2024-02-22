@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtw1de5jfjxue"]
+
+[ext_resource type="Script" path="res://infrastructure/coordinate_indicators/coordinate_overlay.gd" id="1_y6p3m"]
+
+[node name="CoordinateOverlay" type="MarginContainer"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 196.0
+offset_bottom = 196.0
+script = ExtResource("1_y6p3m")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2

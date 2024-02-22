@@ -1,0 +1,48 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dkvmyh3ie358w"]
+
+[ext_resource type="Texture2D" uid="uid://c2gv23il8xy6q" path="res://infrastructure/grid/LightBlue.png" id="1_nkwxn"]
+[ext_resource type="Texture2D" uid="uid://dr03ipdau72ly" path="res://infrastructure/grid/Blue.png" id="1_ypv6n"]
+[ext_resource type="Texture2D" uid="uid://hxh5olnvmqdt" path="res://infrastructure/grid/Pink.png" id="2_2d6rp"]
+[ext_resource type="Texture2D" uid="uid://deom8j6yoteo4" path="res://infrastructure/grid/Yellow.png" id="3_b5s7o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2cqa"]
+texture = ExtResource("1_nkwxn")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/custom_data_0 = &"light blue"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8om65"]
+texture = ExtResource("1_ypv6n")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/custom_data_0 = &"blue"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hae55"]
+texture = ExtResource("2_2d6rp")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/custom_data_0 = &"pink"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3v7k"]
+texture = ExtResource("3_b5s7o")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/custom_data_0 = &"yellow"
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "tile_color"
+custom_data_layer_0/type = 21
+sources/1 = SubResource("TileSetAtlasSource_8om65")
+sources/2 = SubResource("TileSetAtlasSource_hae55")
+sources/3 = SubResource("TileSetAtlasSource_e3v7k")
+sources/0 = SubResource("TileSetAtlasSource_e2cqa")

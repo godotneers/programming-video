@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://s3md7jokk8b"]
+
+[ext_resource type="TileSet" uid="uid://dkvmyh3ie358w" path="res://infrastructure/grid/grid_tileset.tres" id="1_2dbd6"]
+[ext_resource type="PackedScene" uid="uid://buatvxdvveuad" path="res://infrastructure/mrg/mr_g.tscn" id="1_jo3sr"]
+[ext_resource type="Script" path="res://welcome.gd" id="3_6vxvv"]
+[ext_resource type="PackedScene" uid="uid://dtw1de5jfjxue" path="res://infrastructure/coordinate_indicators/coordinate_overlay.tscn" id="4_f284w"]
+[ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="4_gv4e2"]
+[ext_resource type="PackedScene" uid="uid://bwmwivq8vfh4v" path="res://items/coffee.tscn" id="5_6p0ys"]
+
+[node name="Welcome" type="Node2D"]
+
+[node name="World" type="TileMap" parent="." groups=["world"]]
+position = Vector2(-64, -64)
+tile_set = ExtResource("1_2dbd6")
+format = 2
+layer_0/tile_data = PackedInt32Array(65537, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65538, 1, 0, 131073, 1, 0, 131074, 2, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 196610, 1, 0, 262146, 3, 0, 327682, 1, 0, 196611, 1, 0, 262147, 1, 0, 327683, 1, 0, 196612, 1, 0, 262148, 1, 0, 327684, 1, 0, 196613, 1, 0, 262149, 1, 0, 327685, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 0, 0, 262152, 1, 0, 327688, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Tile Coordinates" parent="." instance=ExtResource("4_f284w")]
+visible = false
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 704.0
+grid_size = Vector2i(9, 5)
+grid_offset = Vector2i(1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Mr G" parent="." instance=ExtResource("1_jo3sr")]
+position = Vector2(381, 256)
+script = ExtResource("3_6vxvv")
+
+[node name="Coffee" parent="." instance=ExtResource("5_6p0ys")]
+position = Vector2(636, 253)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_gv4e2")]
+metadata/_edit_lock_ = true
+
+[connection signal="finished" from="Mr G" to="CanvasLayer/Control" method="on_robot_finished"]
+[connection signal="step_started" from="Mr G" to="CanvasLayer/Control" method="on_step_started"]

@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxj1fuffep5va"]
+
+[ext_resource type="TileSet" uid="uid://dkvmyh3ie358w" path="res://infrastructure/grid/grid_tileset.tres" id="1_m67dt"]
+[ext_resource type="PackedScene" uid="uid://buatvxdvveuad" path="res://infrastructure/mrg/mr_g.tscn" id="3_anxnu"]
+[ext_resource type="Script" path="res://challenges/01_walking_in_circles/walking_in_circles.gd" id="4_15edt"]
+[ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="5_roimi"]
+[ext_resource type="PackedScene" uid="uid://bwmwivq8vfh4v" path="res://items/coffee.tscn" id="6_1f71p"]
+[ext_resource type="Script" path="res://infrastructure/ui/challenge_item.gd" id="7_ch3xk"]
+[ext_resource type="PackedScene" uid="uid://c16yxy0kb4wcw" path="res://infrastructure/ui/challenge_text.tscn" id="8_ip8i3"]
+[ext_resource type="Texture2D" uid="uid://ch3hpeoccj8gf" path="res://infrastructure/item/coffee.png" id="9_2wd3i"]
+
+[node name="WalkingInCircles" type="Node2D"]
+
+[node name="World" type="TileMap" parent="." groups=["world"]]
+position = Vector2(-64, -64)
+tile_set = ExtResource("1_m67dt")
+format = 2
+layer_0/tile_data = PackedInt32Array(65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 393217, 1, 0, 458753, 1, 0, 65538, 2, 0, 131074, 2, 0, 196610, 2, 0, 262146, 2, 0, 327682, 2, 0, 393218, 2, 0, 458754, 2, 0, 65539, 2, 0, 131075, 3, 0, 196611, 3, 0, 262147, 3, 0, 327683, 3, 0, 393219, 3, 0, 458755, 2, 0, 65540, 2, 0, 131076, 3, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 3, 0, 458756, 2, 0, 65541, 2, 0, 131077, 3, 0, 196613, 0, 0, 262149, 1, 0, 327685, 0, 0, 393221, 3, 0, 458757, 2, 0, 65542, 2, 0, 131078, 3, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 3, 0, 458758, 2, 0, 65543, 2, 0, 131079, 3, 0, 196615, 3, 0, 262151, 3, 0, 327687, 3, 0, 393223, 3, 0, 458759, 2, 0, 65544, 2, 0, 131080, 2, 0, 196616, 2, 0, 262152, 2, 0, 327688, 2, 0, 393224, 2, 0, 458760, 2, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0, 393225, 1, 0, 458761, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0)
+
+[node name="Mr G" parent="." instance=ExtResource("3_anxnu")]
+position = Vector2(506, 388)
+script = ExtResource("4_15edt")
+
+[node name="Coffee" parent="." instance=ExtResource("6_1f71p")]
+position = Vector2(514, 253)
+
+[node name="Coffee2" parent="." instance=ExtResource("6_1f71p")]
+position = Vector2(896, 385)
+
+[node name="Coffee3" parent="." instance=ExtResource("6_1f71p")]
+position = Vector2(765, 769)
+
+[node name="Coffee4" parent="." instance=ExtResource("6_1f71p")]
+position = Vector2(384, 638)
+
+[node name="--CHALLENGES--" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Challenge 1" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
+position = Vector2(384, 512)
+script = ExtResource("7_ch3xk")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 1" instance=ExtResource("8_ip8i3")]
+offset_left = 402.0
+offset_top = -367.0
+offset_right = 832.0
+offset_bottom = 347.0
+text = "Write a program, that let's Mr. G. walk one time around the inner blue circle. First try a simple approach. Use the [img width=24]res://infrastructure/ui/play_scene.svg[/img] icon in the upper right to try out your program. You can stop your program with the [img width=24]res://infrastructure/ui/stop.svg[/img] icon when you are done or something goes wrong.
+
+Can you improve your program to make this work with a maximum of 4 lines of code (comments don't count as lines of code)?
+
+Hint: a [code]for[/code] loop can help reducing duplicated lines of code."
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 1"]
+points = PackedVector2Array(128, -128, 384, -128, 384, 128, 128, 128)
+closed = true
+metadata/_edit_lock_ = true
+
+[node name="Challenge 2" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
+position = Vector2(384, 512)
+script = ExtResource("7_ch3xk")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 2" instance=ExtResource("8_ip8i3")]
+offset_left = 878.0
+offset_top = -383.0
+offset_right = 1309.0
+offset_bottom = 59.0
+text = "Drag Mr. G to the upper left yellow field. Now change your program so Mr. G walks the yellow circle. 
+
+Can you again do it with just 4 lines of code (comments don't count as lines of code)? 
+
+Hint: You can put [code]for[/code] loops inside of [code]for[/code] loops."
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText2" parent="--CHALLENGES--/Challenge 2" instance=ExtResource("8_ip8i3")]
+offset_left = 105.0
+offset_top = -503.0
+offset_right = 429.0
+offset_bottom = -401.0
+text = "Mr. G. starts here."
+metadata/_edit_lock_ = true
+
+[node name="Line2D2" type="Line2D" parent="--CHALLENGES--/Challenge 2"]
+points = PackedVector2Array(1, -289, 114, -408)
+closed = true
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 2"]
+points = PackedVector2Array(0, -256, 512, -256, 512, 256, 0, 256)
+closed = true
+metadata/_edit_lock_ = true
+
+[node name="Challenge 3" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+position = Vector2(384, 512)
+script = ExtResource("7_ch3xk")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 3" instance=ExtResource("8_ip8i3")]
+offset_left = 1018.0
+offset_top = -455.0
+offset_right = 1449.0
+offset_bottom = 395.0
+text = "We have 4 coffee cups. If we use these as \"corner stones\", we could write a program that would work equally well for all 3 circles.
+
+Write a program that uses the coffee cups and lets Mr.G. walk any one of the three circles without having to change the program. 
+
+Drag Mr. G. to the starting point and place the coffee cups so they can tell Mr.G. when it is time to turn.
+
+Hint: [code]is_item_before_me[/code] can tell us whether there is a coffee cup directly in front of Mr. G. Also this time a combination of [code]while[/code] and [code]for[/code] loops may come in handy."
+metadata/_edit_lock_ = true
+
+[node name="Coffee5" type="Sprite2D" parent="--CHALLENGES--/Challenge 3"]
+modulate = Color(1, 1, 1, 0.513726)
+position = Vector2(513, -128)
+texture = ExtResource("9_2wd3i")
+metadata/_edit_lock_ = true
+
+[node name="Coffee6" type="Sprite2D" parent="--CHALLENGES--/Challenge 3"]
+modulate = Color(1, 1, 1, 0.513726)
+position = Vector2(384, 257)
+texture = ExtResource("9_2wd3i")
+metadata/_edit_lock_ = true
+
+[node name="Coffee7" type="Sprite2D" parent="--CHALLENGES--/Challenge 3"]
+modulate = Color(1, 1, 1, 0.513726)
+position = Vector2(-1, 128)
+texture = ExtResource("9_2wd3i")
+metadata/_edit_lock_ = true
+
+[node name="Coffee8" type="Sprite2D" parent="--CHALLENGES--/Challenge 3"]
+modulate = Color(1, 1, 1, 0.513726)
+position = Vector2(129, -257)
+texture = ExtResource("9_2wd3i")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("5_roimi")]
+metadata/_edit_lock_ = true
+
+[connection signal="finished" from="Mr G" to="CanvasLayer/Control" method="on_robot_finished"]
+[connection signal="step_started" from="Mr G" to="CanvasLayer/Control" method="on_step_started"]

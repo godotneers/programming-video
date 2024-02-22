@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://c16yxy0kb4wcw"]
+
+[ext_resource type="Script" path="res://infrastructure/ui/challenge_text.gd" id="1_ofmx7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uflx8"]
+bg_color = Color(0.0745098, 0.0745098, 0.0745098, 0.827451)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="SystemFont" id="SystemFont_qm6a8"]
+font_names = PackedStringArray("Monospace")
+subpixel_positioning = 0
+
+[node name="ChallengeText" type="PanelContainer"]
+offset_right = 324.0
+offset_bottom = 275.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uflx8")
+script = ExtResource("1_ofmx7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+metadata/_edit_lock_ = true
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_fonts/mono_font = SubResource("SystemFont_qm6a8")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 2

@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ss80r1o2jlf"]
+
+[ext_resource type="Script" path="res://infrastructure/speech_bubble/speech_bubble.gd" id="1_v5lju"]
+[ext_resource type="Texture2D" uid="uid://ba8cheb4oo1pw" path="res://infrastructure/speech_bubble/speech_bubble.svg" id="1_w5aob"]
+
+[node name="Node2D" type="Node2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 405
+script = ExtResource("1_v5lju")
+
+[node name="SpeechBubble" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -149.5
+offset_top = -78.0
+offset_right = 149.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpeechBubble"]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="CenterContainer" type="CenterContainer" parent="SpeechBubble/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="SpeechBubble/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SpeechBubble/VBoxContainer/CenterContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("1_w5aob")
+region_rect = Rect2(2, 3, 125, 88.2947)
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="SpeechBubble/VBoxContainer/CenterContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="SpeechBubble/VBoxContainer/CenterContainer/MarginContainer2/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Hello Godotneers!"
+horizontal_alignment = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="SpeechBubble/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("1_w5aob")
+region_rect = Rect2(52, 96, 20, 18)

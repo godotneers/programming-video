@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://buatvxdvveuad"]
+
+[ext_resource type="Texture2D" uid="uid://03uxw6earmm" path="res://infrastructure/mrg/mrg0000.png" id="1_0n1ua"]
+[ext_resource type="PackedScene" uid="uid://c1ss80r1o2jlf" path="res://infrastructure/speech_bubble/speech_bubble.tscn" id="2_cnh5j"]
+[ext_resource type="Script" path="res://infrastructure/mrg/no_rotate.gd" id="2_uammv"]
+
+[node name="Mr G" type="Node2D"]
+
+[node name="Mrg0000" type="Sprite2D" parent="."]
+z_index = 50
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_0n1ua")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BubbleRoot" type="Node2D" parent="."]
+script = ExtResource("2_uammv")
+
+[node name="SpeechBubble" parent="BubbleRoot" instance=ExtResource("2_cnh5j")]
+unique_name_in_owner = true
+position = Vector2(0, -79)
+
+[node name="HandRoot" type="Node2D" parent="."]
+position = Vector2(22, 55)
+
+[node name="Hand" type="Marker2D" parent="HandRoot"]
+unique_name_in_owner = true
+script = ExtResource("2_uammv")

@@ -1,0 +1,133 @@
+[gd_scene load_steps=9 format=3 uid="uid://clc7vybtt85cu"]
+
+[ext_resource type="TileSet" uid="uid://dkvmyh3ie358w" path="res://infrastructure/grid/grid_tileset.tres" id="1_e0to5"]
+[ext_resource type="PackedScene" uid="uid://buatvxdvveuad" path="res://infrastructure/mrg/mr_g.tscn" id="3_g2hrg"]
+[ext_resource type="Script" path="res://challenges/02_the_waiter/the_waiter.gd" id="4_y0fth"]
+[ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="5_ylpjb"]
+[ext_resource type="PackedScene" uid="uid://bwmwivq8vfh4v" path="res://items/coffee.tscn" id="6_k06gy"]
+[ext_resource type="Script" path="res://infrastructure/ui/challenge_item.gd" id="7_f2rnj"]
+[ext_resource type="PackedScene" uid="uid://c16yxy0kb4wcw" path="res://infrastructure/ui/challenge_text.tscn" id="8_jms66"]
+[ext_resource type="Texture2D" uid="uid://ch3hpeoccj8gf" path="res://infrastructure/item/coffee.png" id="9_cptgx"]
+
+[node name="The Waiter" type="Node2D"]
+
+[node name="World" type="TileMap" parent="." groups=["world"]]
+position = Vector2(-64, -64)
+tile_set = ExtResource("1_e0to5")
+format = 2
+layer_0/tile_data = PackedInt32Array(65537, 1, 0, 65540, 1, 0, 65538, 1, 0, 131073, 1, 0, 131074, 0, 0, 131075, 1, 0, 131076, 1, 0, 65539, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 393217, 1, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 1, 0, 196611, 1, 0, 262147, 1, 0, 327683, 1, 0, 393219, 1, 0, 196612, 1, 0, 262148, 1, 0, 327684, 1, 0, 393220, 1, 0, 65541, 1, 0, 131077, 2, 0, 196613, 2, 0, 262149, 2, 0, 327685, 2, 0, 393221, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 393222, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Mr G" parent="." instance=ExtResource("3_g2hrg")]
+position = Vector2(383, 259)
+script = ExtResource("4_y0fth")
+
+[node name="Coffee" parent="." instance=ExtResource("6_k06gy")]
+position = Vector2(642, 250)
+
+[node name="Coffee2" parent="." instance=ExtResource("6_k06gy")]
+position = Vector2(636, 641)
+
+[node name="Coffee3" parent="." instance=ExtResource("6_k06gy")]
+position = Vector2(637, 514)
+
+[node name="Coffee4" parent="." instance=ExtResource("6_k06gy")]
+position = Vector2(650, 380)
+
+[node name="--CHALLENGES--" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Challenge 1" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
+position = Vector2(256, 512)
+script = ExtResource("7_f2rnj")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 1" instance=ExtResource("8_jms66")]
+offset_left = 775.0
+offset_top = -299.0
+offset_right = 1205.0
+offset_bottom = 121.0
+text = "Mr. G. has opened a small coffee shop. Write a program that let's Mr G. move the coffee pot from the pink tile to the blue tile.
+
+Hint: the `pick_up_item` and `drop_item` functions can be used to pick up and drop items. "
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 1"]
+points = PackedVector2Array(384, -256, 32, -256, 32, -224, 32, -288, 0, -256, 32, -224)
+metadata/_edit_lock_ = true
+
+[node name="Challenge 2" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
+position = Vector2(256, 512)
+script = ExtResource("7_f2rnj")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 2" instance=ExtResource("8_jms66")]
+offset_left = 796.0
+offset_top = -417.0
+offset_right = 1348.0
+offset_bottom = 263.0
+text = "Drag a second coffee cup on a pink tile. Now update the program such that Mr. G. moves both cups to the blue side.
+
+Can you write the program in a way that works no matter on which pink tiles you put the coffee cups? Can you also write it in a way that works no matter how many cups are on the pink side (e.g. none, 1, 2, 3, or 4)?
+
+Hint: the `is_item_before_me` variable combined with an `if` statement can be used to determine if there is a cup on a  tile. Remember, that you can write your own functions (with the `func` keyword) to avoid having to repeat code again and again."
+metadata/_edit_lock_ = true
+
+[node name="Coffee5" type="Sprite2D" parent="--CHALLENGES--/Challenge 2"]
+modulate = Color(1, 1, 1, 0.513726)
+position = Vector2(386, -1)
+texture = ExtResource("9_cptgx")
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 2"]
+points = PackedVector2Array(384, -256, 32, -256, 32, -224, 32, -288, 0, -256, 32, -224)
+metadata/_edit_lock_ = true
+
+[node name="Line2D2" type="Line2D" parent="--CHALLENGES--/Challenge 2"]
+position = Vector2(0, 265)
+points = PackedVector2Array(384, -256, 32, -256, 32, -224, 32, -288, 0, -256, 32, -224)
+metadata/_edit_lock_ = true
+
+[node name="Challenge 3" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+position = Vector2(256, 512)
+script = ExtResource("7_f2rnj")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 3" instance=ExtResource("8_jms66")]
+offset_left = 794.0
+offset_top = -415.0
+offset_right = 1346.0
+offset_bottom = 134.0
+text = "Mr. G. now gets 2 coins for each served coffee. Extend the program you wrote for the previous challenge such that Mr. G. keeps track of how many coffees he's served and tells us how many coins he has earned at the end of the program.
+
+Again, try to make the program work no matter how many cups there are or where they stand.
+
+Can you extend the program such that if Mr. G. serves 3 or more cups, he gets a bonus of 2 coins?
+
+Hint: You can use the `>=` operator to check if something is greater than or equal to another thing, e.g. `if a >= b:` checks if the value in variable `a` is greater than or equal to the value in variable `b`. "
+metadata/_edit_lock_ = true
+
+[node name="Coffee5" type="Sprite2D" parent="--CHALLENGES--/Challenge 3"]
+modulate = Color(1, 1, 1, 0.513726)
+position = Vector2(386, -1)
+texture = ExtResource("9_cptgx")
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 3"]
+points = PackedVector2Array(384, -256, 32, -256, 32, -224, 32, -288, 0, -256, 32, -224)
+metadata/_edit_lock_ = true
+
+[node name="Line2D2" type="Line2D" parent="--CHALLENGES--/Challenge 3"]
+position = Vector2(0, 265)
+points = PackedVector2Array(384, -256, 32, -256, 32, -224, 32, -288, 0, -256, 32, -224)
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("5_ylpjb")]
+metadata/_edit_lock_ = true
+
+[connection signal="finished" from="Mr G" to="CanvasLayer/Control" method="on_robot_finished"]
+[connection signal="step_started" from="Mr G" to="CanvasLayer/Control" method="on_step_started"]

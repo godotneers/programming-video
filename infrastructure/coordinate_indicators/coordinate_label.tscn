@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgshro4fvqwm4"]
+
+[ext_resource type="Script" path="res://infrastructure/coordinate_indicators/coordinate_label.gd" id="1_kpeeg"]
+
+[node name="CoordinateLabel" type="MarginContainer"]
+custom_minimum_size = Vector2(128, 128)
+script = ExtResource("1_kpeeg")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Lorem"
