@@ -5,7 +5,10 @@ var _challenges:Array[Node] = []
 @onready var _root:Container = %VBoxContainer 
 
 func scene_changed(new_root:Node):
-	_challenges = new_root.get_tree().get_nodes_in_group("challenge")
+	if not is_instance_valid(new_root):
+		_challenges.clear()
+	else:
+		_challenges = new_root.get_tree().get_nodes_in_group("challenge")
 	_refresh_ui()
 	
 func _refresh_ui():
