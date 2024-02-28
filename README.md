@@ -1,9 +1,8 @@
 # Learning to program with Godot
 
-TODO: replace link to the video once it is released
 <p align="center">
   <p align="center">
-  <a href="https://www.youtube.com/watch?v=43BZsLZheA4"><img src="https://i3.ytimg.com/vi/43BZsLZheA4/hqdefault.jpg" alt="Learning to program with Godot, Video on YouTube Cover Image"></a> 
+  <a href="https://www.youtube.com/watch?v=43BZsLZheA4"> <!-- <img src="https://i3.ytimg.com/vi/43BZsLZheA4/hqdefault.jpg" --> <img src="_assets/title_image_template.png" width="480px" alt="Learning to program with Godot, Video on YouTube Cover Image"></a> 
   </p>
 </p>
 
