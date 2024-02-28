@@ -96,6 +96,7 @@ closed = true
 metadata/_edit_lock_ = true
 
 [node name="Challenge 3" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
 position = Vector2(384, 512)
 script = ExtResource("7_ch3xk")
 metadata/_edit_lock_ = true
