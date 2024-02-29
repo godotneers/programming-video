@@ -1,3 +1,4 @@
+@tool
 ## This is the class that represents Mr.G. It provides all the functionality
 ## to control him.
 class_name SteppingRobot
@@ -107,6 +108,8 @@ func _reset_and_play():
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	# move to closest grid center
 	global_position = coordinates * 128.0
 	_what_should_i_do.call_deferred()
