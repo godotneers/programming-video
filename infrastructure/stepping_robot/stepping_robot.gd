@@ -125,7 +125,7 @@ func what_should_i_do():
 
 ## Shows the given text in a speech bubble above Mr. G's head.
 func say(what: Variant):
-	_record_step(SayStep.new(self).setup(what))
+	_record_step(SayStep.new(self).setup(str(what)))
 
 ## Turns Mr. G to the left.
 func turn_left() -> void:
