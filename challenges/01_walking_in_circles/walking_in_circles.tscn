@@ -22,16 +22,16 @@ position = Vector2(506, 388)
 script = ExtResource("4_15edt")
 
 [node name="Coffee" parent="." instance=ExtResource("6_1f71p")]
-position = Vector2(514, 253)
+position = Vector2(1154, 387)
 
 [node name="Coffee2" parent="." instance=ExtResource("6_1f71p")]
-position = Vector2(896, 385)
+position = Vector2(1149, 251)
 
 [node name="Coffee3" parent="." instance=ExtResource("6_1f71p")]
-position = Vector2(765, 769)
+position = Vector2(1156, 512)
 
 [node name="Coffee4" parent="." instance=ExtResource("6_1f71p")]
-position = Vector2(384, 638)
+position = Vector2(1157, 631)
 
 [node name="--CHALLENGES--" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
