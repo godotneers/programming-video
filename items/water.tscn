@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsviufj3hmwpb"]
+
+[ext_resource type="PackedScene" uid="uid://mm74oald6780" path="res://infrastructure/item/item.tscn" id="1_rtdup"]
+[ext_resource type="Texture2D" uid="uid://b0dr7pgfmid6a" path="res://infrastructure/item/water.png" id="2_k7eeu"]
+
+[node name="Water" instance=ExtResource("1_rtdup")]
+item_name = "Water"
+texture = ExtResource("2_k7eeu")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_k7eeu")

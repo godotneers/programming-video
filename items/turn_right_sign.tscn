@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://yw5u7kfjf5km"]
+
+[ext_resource type="PackedScene" uid="uid://mm74oald6780" path="res://infrastructure/item/item.tscn" id="1_ceam1"]
+[ext_resource type="Texture2D" uid="uid://c2ba3ht5y0pye" path="res://infrastructure/item/arrow.png" id="2_svu7c"]
+
+[node name="Turn Right Sign" instance=ExtResource("1_ceam1")]
+item_name = "Turn Right Sign"
+texture = ExtResource("2_svu7c")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_svu7c")
+flip_h = true

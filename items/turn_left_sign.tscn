@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cru0mjpbbr6mb"]
+
+[ext_resource type="PackedScene" uid="uid://mm74oald6780" path="res://infrastructure/item/item.tscn" id="1_hr2ot"]
+[ext_resource type="Texture2D" uid="uid://c2ba3ht5y0pye" path="res://infrastructure/item/arrow.png" id="2_qy24g"]
+
+[node name="TurnLeftSign" instance=ExtResource("1_hr2ot")]
+item_name = "Turn Left Sign"
+texture = ExtResource("2_qy24g")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_qy24g")

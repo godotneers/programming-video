@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://di71jeslnwnsu"]
+
+[ext_resource type="PackedScene" uid="uid://mm74oald6780" path="res://infrastructure/item/item.tscn" id="1_epxv6"]
+[ext_resource type="Texture2D" uid="uid://dfd0rmq7o3xen" path="res://infrastructure/item/plant.png" id="2_ecva7"]
+
+[node name="Plant" instance=ExtResource("1_epxv6")]
+item_name = "Plant"
+texture = ExtResource("2_ecva7")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ecva7")

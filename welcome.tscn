@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://s3md7jokk8b"]
+[gd_scene load_steps=9 format=3 uid="uid://s3md7jokk8b"]
 
 [ext_resource type="TileSet" uid="uid://dkvmyh3ie358w" path="res://infrastructure/grid/grid_tileset.tres" id="1_2dbd6"]
 [ext_resource type="PackedScene" uid="uid://buatvxdvveuad" path="res://infrastructure/mrg/mr_g.tscn" id="1_jo3sr"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dtw1de5jfjxue" path="res://infrastructure/coordinate_indicators/coordinate_overlay.tscn" id="4_f284w"]
 [ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="4_gv4e2"]
 [ext_resource type="PackedScene" uid="uid://bwmwivq8vfh4v" path="res://items/coffee.tscn" id="5_6p0ys"]
+[ext_resource type="PackedScene" uid="uid://c01mvvoya4jfg" path="res://items/tea.tscn" id="7_7ityt"]
+[ext_resource type="PackedScene" uid="uid://bsviufj3hmwpb" path="res://items/water.tscn" id="8_3x18p"]
 
 [node name="Welcome" type="Node2D"]
 
@@ -27,16 +29,22 @@ grid_offset = Vector2i(1, 1)
 metadata/_edit_lock_ = true
 
 [node name="Mr G" parent="." instance=ExtResource("1_jo3sr")]
-position = Vector2(248, 258)
+position = Vector2(266, 256)
 script = ExtResource("3_6vxvv")
 
 [node name="Coffee" parent="." instance=ExtResource("5_6p0ys")]
-position = Vector2(776, 255)
+position = Vector2(385, 124)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("4_gv4e2")]
 metadata/_edit_lock_ = true
+
+[node name="Tea" parent="." instance=ExtResource("7_7ityt")]
+position = Vector2(506, 365)
+
+[node name="Water" parent="." instance=ExtResource("8_3x18p")]
+position = Vector2(630, 121)
 
 [connection signal="finished" from="Mr G" to="CanvasLayer/Control" method="on_robot_finished"]
 [connection signal="step_started" from="Mr G" to="CanvasLayer/Control" method="on_step_started"]

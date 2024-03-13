@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3d2lkddidxcl"]
+
+[ext_resource type="TileSet" uid="uid://dkvmyh3ie358w" path="res://infrastructure/grid/grid_tileset.tres" id="1_jok7y"]
+[ext_resource type="PackedScene" uid="uid://buatvxdvveuad" path="res://infrastructure/mrg/mr_g.tscn" id="2_wdmes"]
+[ext_resource type="Script" path="res://challenges/03_navigation/navigation.gd" id="3_ftd2k"]
+[ext_resource type="Script" path="res://infrastructure/ui/challenge_item.gd" id="5_bvn5c"]
+[ext_resource type="PackedScene" uid="uid://c16yxy0kb4wcw" path="res://infrastructure/ui/challenge_text.tscn" id="6_au4me"]
+[ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="8_kqry4"]
+[ext_resource type="PackedScene" uid="uid://cru0mjpbbr6mb" path="res://items/turn_left_sign.tscn" id="8_qf244"]
+[ext_resource type="PackedScene" uid="uid://di71jeslnwnsu" path="res://items/plant.tscn" id="9_0hcsi"]
+[ext_resource type="PackedScene" uid="uid://yw5u7kfjf5km" path="res://items/turn_right_sign.tscn" id="10_e0vns"]
+
+[node name="Navigation" type="Node2D"]
+
+[node name="World" type="TileMap" parent="." groups=["world"]]
+position = Vector2(-64, -64)
+tile_set = ExtResource("1_jok7y")
+format = 2
+layer_0/tile_data = PackedInt32Array(65537, 1, 0, 65540, 1, 0, 65538, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 65539, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 393217, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 393218, 1, 0, 196611, 1, 0, 262147, 1, 0, 327683, 1, 0, 393219, 1, 0, 196612, 3, 0, 262148, 3, 0, 327684, 3, 0, 393220, 1, 0, 65541, 1, 0, 131077, 1, 0, 196613, 3, 0, 262149, 1, 0, 393221, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 3, 0, 262150, 3, 0, 327686, 3, 0, 393222, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 393223, 1, 0, 458759, 1, 0, 458758, 1, 0, 458757, 1, 0, 458756, 1, 0, 458755, 1, 0, 458754, 1, 0, 458753, 1, 0, 327685, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 9, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0, 393225, 1, 0, 458761, 1, 0, 524297, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Mr G" parent="." instance=ExtResource("2_wdmes")]
+position = Vector2(126, 131)
+script = ExtResource("3_ftd2k")
+
+[node name="--CHALLENGES--" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Challenge 1" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+position = Vector2(256, 512)
+script = ExtResource("5_bvn5c")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 1" instance=ExtResource("6_au4me")]
+offset_left = 745.0
+offset_top = -505.0
+offset_right = 1237.0
+offset_bottom = 515.0
+text = "Mr.G now wants to learn navigating on his own with only a little bit of help. We have some new items \"Turn Left Sign\" and \"Turn Right Sign\". 
+
+Write a program that lets Mr. G walk forward until he either has a \"Turn Left Sign\" or \"Turn Right Sign\" before him. Then he should turn depending on which kind of sign he sees.
+
+Let Mr. G find a way to the plant simply by following the signs.
+
+Hint: You can use the `item_name` property of the `item_before_me` to find out if we have a \"Turn Left Sign\" or \"Turn Right Sign\". Maybe write yourself a helper function to return the name of the item before you to simplify your code.  You can also try to use a different path than the one given. If you need more signs, you can drag in new signs from the `items` folder in the file system view."
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 1"]
+points = PackedVector2Array(0, -384, 0, 256, 384, 256, 384, 128)
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("8_kqry4")]
+metadata/_edit_lock_ = true
+
+[node name="TurnLeftSign" parent="." instance=ExtResource("8_qf244")]
+position = Vector2(252, 899)
+
+[node name="Plant" parent="." instance=ExtResource("9_0hcsi")]
+position = Vector2(640, 517)
+
+[node name="Turn Right Sign" parent="." instance=ExtResource("10_e0vns")]
+position = Vector2(386, 119)
+
+[node name="TurnLeftSign2" parent="." instance=ExtResource("8_qf244")]
+position = Vector2(762, 763)
+
+[connection signal="finished" from="Mr G" to="CanvasLayer/Control" method="on_robot_finished"]
+[connection signal="step_started" from="Mr G" to="CanvasLayer/Control" method="on_step_started"]
