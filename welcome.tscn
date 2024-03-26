@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="4_gv4e2"]
 [ext_resource type="PackedScene" uid="uid://bwmwivq8vfh4v" path="res://items/coffee.tscn" id="5_6p0ys"]
 [ext_resource type="PackedScene" uid="uid://c01mvvoya4jfg" path="res://items/tea.tscn" id="7_7ityt"]
-[ext_resource type="PackedScene" uid="uid://bsviufj3hmwpb" path="res://items/water.tscn" id="8_3x18p"]
+[ext_resource type="PackedScene" path="res://items/water.tscn" id="8_3x18p"]
 
 [node name="Welcome" type="Node2D"]
 
@@ -15,7 +15,7 @@
 position = Vector2(-64, -64)
 tile_set = ExtResource("1_2dbd6")
 format = 2
-layer_0/tile_data = PackedInt32Array(65537, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65538, 1, 0, 131073, 1, 0, 131074, 2, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 196610, 1, 0, 262146, 3, 0, 327682, 1, 0, 196611, 1, 0, 262147, 1, 0, 327683, 1, 0, 196612, 1, 0, 262148, 1, 0, 327684, 1, 0, 196613, 1, 0, 262149, 1, 0, 327685, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 0, 0, 262152, 1, 0, 327688, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0)
+layer_0/tile_data = PackedInt32Array(65537, 4, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 65542, 4, 0, 65538, 4, 0, 131073, 4, 0, 131074, 2, 0, 131075, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 196609, 4, 0, 262145, 4, 0, 327681, 4, 0, 196610, 4, 0, 262146, 3, 0, 327682, 4, 0, 196611, 4, 0, 262147, 4, 0, 327683, 4, 0, 196612, 4, 0, 262148, 4, 0, 327684, 4, 0, 196613, 4, 0, 262149, 4, 0, 327685, 4, 0, 196614, 4, 0, 262150, 4, 0, 327686, 4, 0, 65543, 4, 0, 131079, 4, 0, 196615, 4, 0, 262151, 4, 0, 327687, 4, 0, 65544, 4, 0, 131080, 4, 0, 196616, 1, 0, 262152, 4, 0, 327688, 4, 0, 65545, 4, 0, 131081, 4, 0, 196617, 4, 0, 262153, 4, 0, 327689, 4, 0)
 metadata/_edit_lock_ = true
 
 [node name="Tile Coordinates" parent="." instance=ExtResource("4_f284w")]
@@ -41,7 +41,7 @@ position = Vector2(385, 124)
 metadata/_edit_lock_ = true
 
 [node name="Tea" parent="." instance=ExtResource("7_7ityt")]
-position = Vector2(506, 365)
+position = Vector2(511, 105)
 
 [node name="Water" parent="." instance=ExtResource("8_3x18p")]
 position = Vector2(630, 121)

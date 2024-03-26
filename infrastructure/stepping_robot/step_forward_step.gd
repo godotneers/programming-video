@@ -9,7 +9,7 @@ func _get_forward_vector() -> Vector2:
 
 
 func do():
-	if not _owner.i_am_facing_a_wall:
+	if _owner.i_can_step_forward:
 		_owner.global_position += 128.0 * _get_forward_vector()
 	else:
 		_stepped = false

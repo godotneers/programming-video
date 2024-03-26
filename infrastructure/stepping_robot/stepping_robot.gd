@@ -61,16 +61,16 @@ var is_item_before_me: bool:
 	get:
 		return item_before_me != null
 
-## Indicates if Mr. G is currently facing a wall. Is `true` if Mr. G is facing a wall and is `false` if
-## Mr. G is not facing a wall.
-var i_am_facing_a_wall: bool:
-	get: return _world.get_cell_tile_data(0, coordinates_before_me) == null
+## Indicates if Mr. G can take another step forward. Is `true` if there is a floor tile before Mr. G
+## and `false` otherwise. Items on the floor will not block Mr. G from walking forward. 
+var i_can_step_forward: bool:
+	get: return _world.get_cell_tile_data(0, coordinates_before_me) != null
 
 ## Returns the color of the tile in front of Mr.G. Returns empty string when there is no tile before
 ## Mr. G.
 var tile_color_before_me: StringName:
 	get:
-		var tile = _world.get_cell_tile_data(0, coordinates_before_me)
+		var tile: TileData = _world.get_cell_tile_data(0, coordinates_before_me)
 		if tile == null:
 			return ""
 		return tile.get_custom_data("tile_color")
@@ -78,7 +78,7 @@ var tile_color_before_me: StringName:
 ## Returns the tile color of the tile under Mr.G.
 var tile_color_under_me: StringName:
 	get:
-		var tile = _world.get_cell_tile_data(0, coordinates)
+		var tile: TileData = _world.get_cell_tile_data(0, coordinates)
 		if tile == null:
 			return ""
 		return tile.get_custom_data("tile_color")

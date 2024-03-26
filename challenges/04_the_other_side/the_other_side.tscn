@@ -1,0 +1,125 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvcpaj2exy2xl"]
+
+[ext_resource type="TileSet" uid="uid://dkvmyh3ie358w" path="res://infrastructure/grid/grid_tileset.tres" id="1_c2bhi"]
+[ext_resource type="PackedScene" uid="uid://buatvxdvveuad" path="res://infrastructure/mrg/mr_g.tscn" id="2_lg1c2"]
+[ext_resource type="Script" path="res://challenges/04_the_other_side/the_other_side.gd" id="3_1a85m"]
+[ext_resource type="Script" path="res://infrastructure/ui/challenge_item.gd" id="4_g2ta0"]
+[ext_resource type="PackedScene" uid="uid://c16yxy0kb4wcw" path="res://infrastructure/ui/challenge_text.tscn" id="5_6j6r7"]
+[ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="6_7g1yt"]
+[ext_resource type="PackedScene" uid="uid://bwmwivq8vfh4v" path="res://items/coffee.tscn" id="8_kyyxa"]
+[ext_resource type="PackedScene" path="res://items/plant.tscn" id="8_xnmvq"]
+[ext_resource type="PackedScene" uid="uid://c01mvvoya4jfg" path="res://items/tea.tscn" id="9_pqddw"]
+
+[node name="The Other Side" type="Node2D"]
+
+[node name="World" type="TileMap" parent="." groups=["world"]]
+position = Vector2(-64, -64)
+tile_set = ExtResource("1_c2bhi")
+format = 2
+layer_0/tile_data = PackedInt32Array(131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 196609, 4, 0, 262145, 4, 0, 327681, 3, 0, 393217, 4, 0, 196610, 4, 0, 327682, 3, 0, 393218, 4, 0, 196611, 4, 0, 262147, 2, 0, 327683, 3, 0, 393219, 4, 0, 196612, 4, 0, 262148, 6, 0, 327684, 3, 0, 393220, 4, 0, 131077, 4, 0, 196613, 4, 0, 262149, 6, 0, 393221, 4, 0, 131078, 4, 0, 196614, 4, 0, 262150, 2, 0, 327686, 5, 0, 393222, 4, 0, 131079, 4, 0, 196615, 4, 0, 262151, 1, 0, 327687, 5, 0, 393223, 4, 0, 327685, 5, 0, 131080, 4, 0, 196616, 4, 0, 262152, 4, 0, 327688, 5, 0, 393224, 4, 0, 262146, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Mr G" parent="." instance=ExtResource("2_lg1c2")]
+position = Vector2(121, 641)
+script = ExtResource("3_1a85m")
+
+[node name="--CHALLENGES--" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Challenge 1" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+position = Vector2(256, 512)
+script = ExtResource("4_g2ta0")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 1" instance=ExtResource("5_6j6r7")]
+offset_left = 899.0
+offset_top = -437.0
+offset_right = 1391.0
+offset_bottom = 311.0
+text = "Now Mr. G should learn to use the colors on the floor to bring items to the correct spot. 
+
+Write a program that lets Mr. G walk on the yellow floo, look at the tiles above him and remember their colors. Once he steps on the first orange tile, he should stop and say all the colors he has seen.
+
+Hint: The `tile_color_before_me` property contains the color of the tile right in front of Mr. G. The `tile_color_under_me` property contains the color of the tile on which Mr. G is currently standing. 
+
+
+
+"
+
+[node name="ChallengeText2" parent="--CHALLENGES--/Challenge 1" instance=ExtResource("5_6j6r7")]
+offset_left = -114.0
+offset_top = 304.0
+offset_right = 378.0
+offset_bottom = 440.0
+text = "When on this tile, Mr. G. should say the colors of these three tiles."
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 1"]
+points = PackedVector2Array(316, -64, -64, -64, -64, 64, 316, 64, 316, -64)
+metadata/_edit_lock_ = true
+
+[node name="Line2D2" type="Line2D" parent="--CHALLENGES--/Challenge 1"]
+points = PackedVector2Array(197, 283, 363, 131)
+metadata/_edit_lock_ = true
+
+[node name="Line2D3" type="Line2D" parent="--CHALLENGES--/Challenge 1"]
+points = PackedVector2Array(197, 283, 58, 66)
+metadata/_edit_lock_ = true
+
+[node name="Challenge 2" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
+position = Vector2(256, 512)
+script = ExtResource("4_g2ta0")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 2" instance=ExtResource("5_6j6r7")]
+offset_left = 720.0
+offset_top = -291.0
+offset_right = 1212.0
+offset_bottom = 276.0
+text = "In the video we created a `TallyCounter` class to count items.
+
+Give Mr. G a tally counter and let him count the steps he needs to reach the plant. When Mr.G arrives at the plant, he should say how many steps he has taken.
+
+Hint: In case you didn't follow along with the video, you can find the source code for the `TallyCounter` class in the `solutions.md` file. "
+metadata/_edit_lock_ = true
+
+[node name="Challenge 3" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
+position = Vector2(256, 512)
+script = ExtResource("4_g2ta0")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 3" instance=ExtResource("5_6j6r7")]
+offset_left = 764.0
+offset_top = -449.0
+offset_right = 1320.0
+offset_bottom = 417.0
+text = "Now Mr. G wants to take it a bit more slowly. So every 3 steps he should now take a break and admire the view. He could say  \"Taking a break.\" to indicate that he's currently taking a break.
+
+When Mr. G arrives at the plant, he should still say how many steps he has taken.
+
+Hint: You can give more than one counter to Mr. G. The counter has a `reset` function which we didn't use in the video but which might come in handy here. There is also the `%` operator which can calculate a remainder of an integer division. For example:
+
+`1 % 3 == 1`
+`2 % 3 == 2`
+`3 % 3 == 0`
+
+Maybe you could use this to solve this problem with only a single counter?"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("6_7g1yt")]
+metadata/_edit_lock_ = true
+
+[node name="Plant" parent="." instance=ExtResource("8_xnmvq")]
+position = Vector2(249, 250)
+
+[node name="Coffee" parent="." instance=ExtResource("8_kyyxa")]
+position = Vector2(381, 259)
+
+[node name="Tea" parent="." instance=ExtResource("9_pqddw")]
+position = Vector2(514, 244)
+
+[connection signal="finished" from="Mr G" to="CanvasLayer/Control" method="on_robot_finished"]
+[connection signal="step_started" from="Mr G" to="CanvasLayer/Control" method="on_step_started"]

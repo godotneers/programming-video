@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://infrastructure/ui/challenge_item.gd" id="5_bvn5c"]
 [ext_resource type="PackedScene" uid="uid://c16yxy0kb4wcw" path="res://infrastructure/ui/challenge_text.tscn" id="6_au4me"]
 [ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="8_kqry4"]
-[ext_resource type="PackedScene" uid="uid://cru0mjpbbr6mb" path="res://items/turn_left_sign.tscn" id="8_qf244"]
-[ext_resource type="PackedScene" uid="uid://di71jeslnwnsu" path="res://items/plant.tscn" id="9_0hcsi"]
-[ext_resource type="PackedScene" uid="uid://yw5u7kfjf5km" path="res://items/turn_right_sign.tscn" id="10_e0vns"]
+[ext_resource type="PackedScene" path="res://items/turn_left_sign.tscn" id="8_qf244"]
+[ext_resource type="PackedScene" path="res://items/plant.tscn" id="9_0hcsi"]
+[ext_resource type="PackedScene" path="res://items/turn_right_sign.tscn" id="10_e0vns"]
 
 [node name="Navigation" type="Node2D"]
 
@@ -16,7 +16,7 @@
 position = Vector2(-64, -64)
 tile_set = ExtResource("1_jok7y")
 format = 2
-layer_0/tile_data = PackedInt32Array(65537, 1, 0, 65540, 1, 0, 65538, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 65539, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 393217, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 393218, 1, 0, 196611, 1, 0, 262147, 1, 0, 327683, 1, 0, 393219, 1, 0, 196612, 3, 0, 262148, 3, 0, 327684, 3, 0, 393220, 1, 0, 65541, 1, 0, 131077, 1, 0, 196613, 3, 0, 262149, 1, 0, 393221, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 3, 0, 262150, 3, 0, 327686, 3, 0, 393222, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 393223, 1, 0, 458759, 1, 0, 458758, 1, 0, 458757, 1, 0, 458756, 1, 0, 458755, 1, 0, 458754, 1, 0, 458753, 1, 0, 327685, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 9, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0, 393225, 1, 0, 458761, 1, 0, 524297, 1, 0)
+layer_0/tile_data = PackedInt32Array(65537, 4, 0, 65540, 4, 0, 65538, 4, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 65539, 4, 0, 196609, 4, 0, 262145, 4, 0, 327681, 4, 0, 393217, 4, 0, 196610, 4, 0, 262146, 4, 0, 327682, 4, 0, 393218, 4, 0, 196611, 4, 0, 262147, 4, 0, 327683, 4, 0, 393219, 4, 0, 196612, 3, 0, 262148, 3, 0, 327684, 3, 0, 393220, 4, 0, 65541, 4, 0, 131077, 4, 0, 196613, 3, 0, 262149, 4, 0, 393221, 4, 0, 65542, 4, 0, 131078, 4, 0, 196614, 3, 0, 262150, 3, 0, 327686, 3, 0, 393222, 4, 0, 65543, 4, 0, 131079, 4, 0, 196615, 4, 0, 262151, 4, 0, 327687, 4, 0, 393223, 4, 0, 458759, 4, 0, 458758, 4, 0, 458757, 4, 0, 458756, 4, 0, 458755, 4, 0, 458754, 4, 0, 458753, 4, 0, 327685, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 7, 4, 0, 8, 4, 0, 65544, 4, 0, 131080, 4, 0, 196616, 4, 0, 262152, 4, 0, 327688, 4, 0, 393224, 4, 0, 458760, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 9, 4, 0, 65545, 4, 0, 131081, 4, 0, 196617, 4, 0, 262153, 4, 0, 327689, 4, 0, 393225, 4, 0, 458761, 4, 0, 524297, 4, 0)
 metadata/_edit_lock_ = true
 
 [node name="Mr G" parent="." instance=ExtResource("2_wdmes")]
@@ -27,6 +27,7 @@ script = ExtResource("3_ftd2k")
 metadata/_edit_lock_ = true
 
 [node name="Challenge 1" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
 position = Vector2(256, 512)
 script = ExtResource("5_bvn5c")
 metadata/_edit_lock_ = true
@@ -48,6 +49,46 @@ metadata/_edit_lock_ = true
 [node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 1"]
 points = PackedVector2Array(0, -384, 0, 256, 384, 256, 384, 128)
 metadata/_edit_lock_ = true
+
+[node name="Challenge 2" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
+position = Vector2(256, 512)
+script = ExtResource("5_bvn5c")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 2" instance=ExtResource("6_au4me")]
+offset_left = 720.0
+offset_top = -291.0
+offset_right = 1212.0
+offset_bottom = 276.0
+text = "In the video we created a `TallyCounter` class to count items.
+
+Give Mr. G a tally counter and let him count the steps he needs to reach the plant. When Mr.G arrives at the plant, he should say how many steps he has taken.
+
+Hint: In case you didn't follow along with the video, you can find the source code for the `TallyCounter` class in the `solutions.md` file. "
+metadata/_edit_lock_ = true
+
+[node name="Challenge 3" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+position = Vector2(256, 512)
+script = ExtResource("5_bvn5c")
+metadata/_edit_lock_ = true
+
+[node name="ChallengeText" parent="--CHALLENGES--/Challenge 3" instance=ExtResource("6_au4me")]
+offset_left = 764.0
+offset_top = -449.0
+offset_right = 1320.0
+offset_bottom = 417.0
+text = "Now Mr. G wants to take it a bit more slowly. So every 3 steps he should now take a break and admire the view. He could say  \"Taking a break.\" to indicate that he's currently taking a break.
+
+When Mr. G arrives at the plant, he should still say how many steps he has taken.
+
+Hint: You can give more than one counter to Mr. G. The counter has a `reset` function which we didn't use in the video but which might come in handy here. There is also the `%` operator which can calculate a remainder of an integer division. For example:
+
+`1 % 3 == 1`
+`2 % 3 == 2`
+`3 % 3 == 0`
+
+Maybe you could use this to solve this problem with only a single counter?"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -9,7 +9,7 @@ func do() -> void:
 		_hands_were_empty = true
 		return
 
-	if _owner.i_am_facing_a_wall:
+	if not _owner.i_can_step_forward:
 		return
 
 	var item: Item = _owner.item_in_hand
@@ -19,7 +19,7 @@ func do() -> void:
 
 
 func undo() -> void:
-	if _hands_were_empty or _owner.i_am_facing_a_wall:
+	if _hands_were_empty or not _owner.i_can_step_forward:
 		return
 
 	var item: Item = _owner.item_before_me
@@ -33,7 +33,7 @@ func play() -> void:
 		await _owner._speech_bubble.say("I have nothing in my hand!")
 		return
 
-	if _owner.i_am_facing_a_wall:
+	if not _owner.i_can_step_forward:
 		await _owner._speech_bubble.say("I am at a wall, I can't drop the item")
 		return
 
