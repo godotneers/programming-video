@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://infrastructure/ui/challenge_item.gd" id="5_bvn5c"]
 [ext_resource type="PackedScene" uid="uid://c16yxy0kb4wcw" path="res://infrastructure/ui/challenge_text.tscn" id="6_au4me"]
 [ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="8_kqry4"]
-[ext_resource type="PackedScene" path="res://items/turn_left_sign.tscn" id="8_qf244"]
-[ext_resource type="PackedScene" path="res://items/plant.tscn" id="9_0hcsi"]
-[ext_resource type="PackedScene" path="res://items/turn_right_sign.tscn" id="10_e0vns"]
+[ext_resource type="PackedScene" uid="uid://cru0mjpbbr6mb" path="res://items/turn_left_sign.tscn" id="8_qf244"]
+[ext_resource type="PackedScene" uid="uid://di71jeslnwnsu" path="res://items/plant.tscn" id="9_0hcsi"]
+[ext_resource type="PackedScene" uid="uid://yw5u7kfjf5km" path="res://items/turn_right_sign.tscn" id="10_e0vns"]
 
 [node name="Navigation" type="Node2D"]
 

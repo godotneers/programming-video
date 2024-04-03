@@ -141,7 +141,7 @@ func what_should_i_do():
 			step_counter.count()
 			# We check if the step counter shows an exact multiple
 			# of 3. We also need to check if the count is 
-			# greater than 0 so we don't make a break right at
+			# greater than 0 so we don't take a break right at
 			# the beginning. We can use the `and` keyword to check
 			# that both conditions are true at the same time:
 			if step_counter.current_count % 3 == 0 and step_counter.current_count > 0:
