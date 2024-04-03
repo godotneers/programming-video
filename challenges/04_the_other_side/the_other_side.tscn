@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvcpaj2exy2xl"]
+[gd_scene load_steps=13 format=3 uid="uid://bvcpaj2exy2xl"]
 
 [ext_resource type="TileSet" uid="uid://dkvmyh3ie358w" path="res://infrastructure/grid/grid_tileset.tres" id="1_c2bhi"]
 [ext_resource type="PackedScene" uid="uid://buatvxdvveuad" path="res://infrastructure/mrg/mr_g.tscn" id="2_lg1c2"]
@@ -6,8 +6,11 @@
 [ext_resource type="Script" path="res://infrastructure/ui/challenge_item.gd" id="4_g2ta0"]
 [ext_resource type="PackedScene" uid="uid://c16yxy0kb4wcw" path="res://infrastructure/ui/challenge_text.tscn" id="5_6j6r7"]
 [ext_resource type="PackedScene" uid="uid://cyl8j7q7nqiag" path="res://infrastructure/ui/ui.tscn" id="6_7g1yt"]
+[ext_resource type="Texture2D" uid="uid://dfd0rmq7o3xen" path="res://infrastructure/item/plant.png" id="6_t4h6w"]
+[ext_resource type="Texture2D" uid="uid://ch3hpeoccj8gf" path="res://infrastructure/item/coffee.png" id="7_7xpxm"]
 [ext_resource type="PackedScene" uid="uid://bwmwivq8vfh4v" path="res://items/coffee.tscn" id="8_kyyxa"]
-[ext_resource type="PackedScene" path="res://items/plant.tscn" id="8_xnmvq"]
+[ext_resource type="Texture2D" uid="uid://dgqu0uwt6x6bg" path="res://infrastructure/item/tea.png" id="8_tewjs"]
+[ext_resource type="PackedScene" uid="uid://di71jeslnwnsu" path="res://items/plant.tscn" id="8_xnmvq"]
 [ext_resource type="PackedScene" uid="uid://c01mvvoya4jfg" path="res://items/tea.tscn" id="9_pqddw"]
 
 [node name="The Other Side" type="Node2D"]
@@ -27,6 +30,7 @@ script = ExtResource("3_1a85m")
 metadata/_edit_lock_ = true
 
 [node name="Challenge 1" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
+visible = false
 position = Vector2(256, 512)
 script = ExtResource("4_g2ta0")
 metadata/_edit_lock_ = true
@@ -38,20 +42,23 @@ offset_right = 1391.0
 offset_bottom = 311.0
 text = "Now Mr. G should learn to use the colors on the floor to bring items to the correct spot. 
 
-Write a program that lets Mr. G walk on the yellow floo, look at the tiles above him and remember their colors. Once he steps on the first orange tile, he should stop and say all the colors he has seen.
+Write a program that lets Mr. G walk on the yellow floor, look at the tiles above him and remember their colors. Once he steps on the first orange tile, he should stop and say all the colors he has seen.
 
 Hint: The `tile_color_before_me` property contains the color of the tile right in front of Mr. G. The `tile_color_under_me` property contains the color of the tile on which Mr. G is currently standing. 
+
+Bonus challenge: Can you make Mr. G say the colors in reverse order (e.g. \"red\", \"pink\", \"blue\" ?)
 
 
 
 "
+metadata/_edit_lock_ = true
 
 [node name="ChallengeText2" parent="--CHALLENGES--/Challenge 1" instance=ExtResource("5_6j6r7")]
 offset_left = -114.0
 offset_top = 304.0
 offset_right = 378.0
 offset_bottom = 440.0
-text = "When on this tile, Mr. G. should say the colors of these three tiles."
+text = "When on the orange tile, Mr. G. should say the colors of these three tiles."
 metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="--CHALLENGES--/Challenge 1"]
@@ -77,35 +84,109 @@ offset_left = 720.0
 offset_top = -291.0
 offset_right = 1212.0
 offset_bottom = 276.0
-text = "In the video we created a `TallyCounter` class to count items.
+text = "We have three items, a plant, a coffee and a tea. Drag these items on the colored fields. Now Mr. G should remember which item was on which field.
 
-Give Mr. G a tally counter and let him count the steps he needs to reach the plant. When Mr.G arrives at the plant, he should say how many steps he has taken.
+Write a program that lets Mr. G. look at all the items on the spots similar to the previous challenge and when he arrives at the first orange field lets him state which item was on which field (e.g. \"The plant was on the blue field\"). The program should work no matter how you arrange the items.
 
-Hint: In case you didn't follow along with the video, you can find the source code for the `TallyCounter` class in the `solutions.md` file. "
+Hint: a `Dictionary` might come in handy for this. Also check the documentation of `Dictionary` - there is a `keys()` method that may be useful."
+metadata/_edit_lock_ = true
+
+[node name="Plant2" type="Sprite2D" parent="--CHALLENGES--/Challenge 2"]
+modulate = Color(1, 1, 1, 0.517647)
+position = Vector2(2, -1)
+texture = ExtResource("6_t4h6w")
+metadata/_edit_lock_ = true
+
+[node name="Coffee2" type="Sprite2D" parent="--CHALLENGES--/Challenge 2"]
+modulate = Color(1, 1, 1, 0.517647)
+position = Vector2(128, 3)
+texture = ExtResource("7_7xpxm")
+metadata/_edit_lock_ = true
+
+[node name="Tea2" type="Sprite2D" parent="--CHALLENGES--/Challenge 2"]
+modulate = Color(1, 1, 1, 0.517647)
+position = Vector2(254, -1)
+texture = ExtResource("8_tewjs")
+metadata/_edit_lock_ = true
+
+[node name="Line2D3" type="Line2D" parent="--CHALLENGES--/Challenge 2"]
+position = Vector2(317, 66)
+points = PackedVector2Array(399, 22, 58, 66)
+metadata/_edit_lock_ = true
+
+[node name="Line2D4" type="Line2D" parent="--CHALLENGES--/Challenge 2"]
+position = Vector2(-406, -306)
+points = PackedVector2Array(408, 116, 408, 198, 392, 198, 408, 242, 425, 198, 408, 198)
+joint_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Line2D5" type="Line2D" parent="--CHALLENGES--/Challenge 2"]
+position = Vector2(-277, -303)
+points = PackedVector2Array(408, 116, 408, 198, 392, 198, 408, 242, 425, 198, 408, 198)
+joint_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Line2D6" type="Line2D" parent="--CHALLENGES--/Challenge 2"]
+position = Vector2(-149, -305)
+points = PackedVector2Array(408, 116, 408, 198, 392, 198, 408, 242, 425, 198, 408, 198)
+joint_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Challenge 3" type="Node2D" parent="--CHALLENGES--" groups=["challenge"]]
-visible = false
 position = Vector2(256, 512)
 script = ExtResource("4_g2ta0")
 metadata/_edit_lock_ = true
 
 [node name="ChallengeText" parent="--CHALLENGES--/Challenge 3" instance=ExtResource("5_6j6r7")]
-offset_left = 764.0
-offset_top = -449.0
-offset_right = 1320.0
-offset_bottom = 417.0
-text = "Now Mr. G wants to take it a bit more slowly. So every 3 steps he should now take a break and admire the view. He could say  \"Taking a break.\" to indicate that he's currently taking a break.
+offset_left = 783.0
+offset_top = -302.0
+offset_right = 1339.0
+offset_bottom = 110.0
+text = "Building on the knowledge you gained from challenge 2, write a program that lets Mr. G remember all the items and the tile color they were on. 
 
-When Mr. G arrives at the plant, he should still say how many steps he has taken.
+When Mr. G enters the right side of the room with the orange tiles, he should look at each colored tile to his left and say which item was located on the left side on the tile with this color. If no item was on this tile on the left hand side then he should say something like \"There was no item on the blue tile.\".
 
-Hint: You can give more than one counter to Mr. G. The counter has a `reset` function which we didn't use in the video but which might come in handy here. There is also the `%` operator which can calculate a remainder of an integer division. For example:
+Hint: Think about which information you want to use as key and which one you want to use as value for your dictionary."
+metadata/_edit_lock_ = true
 
-`1 % 3 == 1`
-`2 % 3 == 2`
-`3 % 3 == 0`
+[node name="ChallengeText2" parent="--CHALLENGES--/Challenge 3" instance=ExtResource("5_6j6r7")]
+offset_left = 338.0
+offset_top = 227.0
+offset_right = 766.0
+offset_bottom = 499.0
+pivot_offset = Vector2(342, 265)
+text = "When looking at the blue tile on the right hand side Mr. G should say something like \"There was a plant on the blue tile.\" because on the left hand side the plant was placed on the blue tile."
+metadata/_edit_lock_ = true
 
-Maybe you could use this to solve this problem with only a single counter?"
+[node name="Plant2" type="Sprite2D" parent="--CHALLENGES--/Challenge 3"]
+modulate = Color(1, 1, 1, 0.517647)
+position = Vector2(2, -1)
+texture = ExtResource("6_t4h6w")
+metadata/_edit_lock_ = true
+
+[node name="Coffee2" type="Sprite2D" parent="--CHALLENGES--/Challenge 3"]
+modulate = Color(1, 1, 1, 0.517647)
+position = Vector2(128, 3)
+texture = ExtResource("7_7xpxm")
+metadata/_edit_lock_ = true
+
+[node name="Tea2" type="Sprite2D" parent="--CHALLENGES--/Challenge 3"]
+modulate = Color(1, 1, 1, 0.517647)
+position = Vector2(254, -1)
+texture = ExtResource("8_tewjs")
+metadata/_edit_lock_ = true
+
+[node name="Line2D7" type="Line2D" parent="--CHALLENGES--/Challenge 3"]
+position = Vector2(-148, -301)
+points = PackedVector2Array(207, 363, 207, 243, 87, 243, 87, 365, 207, 365, 462, 538)
+joint_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Line2D8" type="Line2D" parent="--CHALLENGES--/Challenge 3"]
+position = Vector2(485, -315)
+points = PackedVector2Array(94, 380, 219, 380, 219, 252, 94, 252, 94, 380, 31, 524)
+joint_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -113,13 +194,13 @@ Maybe you could use this to solve this problem with only a single counter?"
 metadata/_edit_lock_ = true
 
 [node name="Plant" parent="." instance=ExtResource("8_xnmvq")]
-position = Vector2(249, 250)
+position = Vector2(267, 254)
 
 [node name="Coffee" parent="." instance=ExtResource("8_kyyxa")]
-position = Vector2(381, 259)
+position = Vector2(385, 247)
 
 [node name="Tea" parent="." instance=ExtResource("9_pqddw")]
-position = Vector2(514, 244)
+position = Vector2(502, 222)
 
 [connection signal="finished" from="Mr G" to="CanvasLayer/Control" method="on_robot_finished"]
 [connection signal="step_started" from="Mr G" to="CanvasLayer/Control" method="on_step_started"]
