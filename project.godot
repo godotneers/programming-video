@@ -36,4 +36,5 @@ enabled=PackedStringArray("res://addons/godot_programming_helper/plugin.cfg")
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.113725, 0.462745, 0.266667, 1)
